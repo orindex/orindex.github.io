@@ -1,12 +1,10 @@
 /* ----
 
-# KStart
-# By: Dreamer-Paul
-# Last Update: 2022.5.28
+# Orindex
+# By: Coderorangesoft
 
-一个简洁轻巧的起始页
-
-本代码为奇趣保罗原创，并遵守 MIT 开源协议。欢迎访问我的博客：https://paugram.com
+本代码为奇趣保罗原创，并遵守 MIT 开源协议。欢迎访问奇趣保罗的博客：https://paugram.com
+本代码最后编辑于橙软，并遵守 MIT 开源协议。欢迎访问橙软的博客:https://coderorangesoft.github.io
 
 ---- */
 
@@ -321,7 +319,8 @@ function KStart() {
     clearButton: () => {
       methods.clearStorage();
 
-      ks.notice("本地设置已清除，刷新页面后将读取默认配置！", { color: "green", time: 5000 });
+      ks.notice("[终端]清除成功！", { color: "green", time: 5000 });
+      console.log("[终端]清除成功！")
     },
     inputButton: () => {
       obj.settingBtn.file.click();
@@ -333,18 +332,20 @@ function KStart() {
       obj._internal.link.download = `userset-${parseInt(new Date().getTime() / 1000)}.json`;
       obj._internal.link.click();
 
-      ks.notice("设置项已经导出，你可以将它上传到 GitHub 仓库以对外展示", { color: "yellow", time: 5000 });
+      ks.notice("[终端]导出成功！", { color: "yellow", time: 5000 });
+      console.log("[终端]导出成功！")
     },
     fileInputChange: (e) => {
       const file = e.target.files && e.target.files[0];
 
       if (!file) {
-        console.log("🔮 也许是不存在的操作？");
+        console.error("[终端]你干嘛哈哈哎哟");
         return;
       }
 
       if (file.type !== "application/json") {
-        ks.notice("导入的文件必须是 JSON 格式", { color: "red", time: 3000 });
+        ks.notice("[终端]请上传JSON文件！", { color: "red", time: 3000 });
+        console.error("[终端]导入失败！")
         return;
       }
 
@@ -559,7 +560,7 @@ function KStart() {
         });
       }
       else {
-        console.error("这个一般不会触发吧？");
+        console.error("[终端]你干嘛哈哈哎哟");
       }
     },
 
