@@ -1,3 +1,7 @@
 # orindex
-一个简洁轻巧的起始页
-基于[KStart](https://github.com/Dreamer-Paul/KStart)，感谢大佬的开源！
+## 一个小巧的起始页
+## 更新日志
+### 最新
+beta1.1 删除 KStart 的所有代码,自力更生!
+### 往期
+beta1.0 基于KStart 做了大更改
